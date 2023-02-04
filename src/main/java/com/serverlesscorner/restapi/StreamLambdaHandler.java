@@ -27,9 +27,7 @@ public class StreamLambdaHandler implements RequestStreamHandler {
 	static {
 		try {
 			LOG.info("start lambda container init");
-
 			handler = SpringLambdaContainerHandler.getAwsProxyHandler(ApplicationConfig.class);
-
 			LOG.info("endlambda container init");
 		} catch (ContainerInitializationException e) {
 			// if we fail here. We re-throw the exception to force another cold start
